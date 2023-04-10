@@ -1,0 +1,36 @@
+.profile-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #272626;
+    color: #cccccc;
+  }
+  
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  .profile-bio {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  
+  .profile-favorites,
+  .profile-friends {
+    margin-top: 30px;
+  }
+  

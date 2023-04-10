@@ -4,7 +4,7 @@ import "../styles/Header.css";
 const Header = () => {
     return (
     <header className="header">
-        <h1>SipStream</h1>
+        <h1>Cocktail Copilot</h1>
         </header>
     )
 }

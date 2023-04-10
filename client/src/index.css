@@ -1,0 +1,38 @@
+html, body {
+  margin: 0;
+  height: 100%; /* Add this to cover the full height */
+  width: 100%; /* Add this to cover the full width */
+}
+
+body {
+  background-color: #0d0d0d;
+  font-family: 'Gloock', serif;
+}
+
+#root {
+  height: 100%; /* Add this to cover the full height */
+  width: 100%; /* Add this to cover the full width */
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #0d0d0d;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ccc;
+}

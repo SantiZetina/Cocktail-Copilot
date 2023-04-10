@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #4b2e1e;
-    color: #fff;
+    background-color: #000000;
+    color: #cccccc;
     height: 80px;
+    font-family: 'Gloock', serif;
 }
