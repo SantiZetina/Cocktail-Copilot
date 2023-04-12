@@ -3,14 +3,20 @@ const path = require('path');
 const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('./schemas');
 const routes = require('./routes');
-const connectDB = require('./config/connection');
 const dotenv = require('dotenv');
 
-require('dotenv').config();
+require('./config/connection')
 
-connectDB();
+dotenv.config();
 
 const app = express();
+
+const server = new ApolloServer({  
+    typeDefs,
+    resolvers,
+});
+
+server.applyMiddleware({ app });
 
 const PORT = process.env.PORT || 3000;
 
@@ -27,4 +33,5 @@ app.get('*', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
+  console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`)
 });
