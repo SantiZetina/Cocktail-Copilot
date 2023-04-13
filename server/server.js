@@ -16,7 +16,12 @@ const server = new ApolloServer({
     resolvers,
 });
 
-server.applyMiddleware({ app });
+async function startServer() {
+    await server.start();
+    server.applyMiddleware({ app });
+}
+
+startServer();
 
 const PORT = process.env.PORT || 3000;
 
