@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-impo
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import './index.css'
 import Header from './components/Header';
@@ -8,6 +7,7 @@ import HomePage from './pages/HomePage';
 import FavoritePage from './pages/FavoritePage';
 import AgeVerification from './components/AgeVerification';
 import ProfilePage from './pages/Profile/ProfilePage';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 
 const client = new ApolloClient({ 
