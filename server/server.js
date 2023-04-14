@@ -4,6 +4,7 @@ const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('./schemas');
 const routes = require('./routes');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 require('./config/connection')
 
@@ -27,8 +28,14 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(cors());
 app.use(routes);
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Internal Server Error');
+});
+
 
 app.use(express.static(path.join(__dirname, '../client/build')));
 
