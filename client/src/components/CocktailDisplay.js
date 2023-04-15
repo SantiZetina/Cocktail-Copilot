@@ -1,15 +1,19 @@
 import React from 'react';
-import IngredientsList from './IngredientsList';
-import Instructions from './Instructions';
+import '../styles/ChatMessages.css'
 
-const CocktailDisplay = ({ instructions, ingredients }) => {
+const CocktailDisplay = ({ messages }) => {
     return (
-        <div>
-            <Instructions instructions={instructions} />
-            <IngredientsList ingredients={ingredients} />
-            
-        </div>
+      <div className="chat-messages-container">
+        {messages.map((message, index) => (
+          <p key={index} className={`chat-message ${message.role}`}>
+            <strong>{message.role === 'user' ? 'You: ' : 'AI: '}</strong>
+            {message.content}
+          </p>
+        ))}
+      </div>
+    );
+  };
+  
+  export default CocktailDisplay;
+  
 
-        )
-}
-export default CocktailDisplay;
