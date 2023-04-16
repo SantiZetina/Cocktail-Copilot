@@ -27,6 +27,7 @@ const typeDefs = gql`
         getAllUsers: [User]
         getUserById(id: ID!): User
         getAllInstructions: [Instruction]
+        getFavoriteInstructions(userId: ID!): [Instruction]
     }
 
     type Mutation {

@@ -10,7 +10,11 @@ const resolvers = {
         },
         getAllInstructions: async () => {
             return await Instruction.find({});
-        }
+        },
+        getFavoriteInstructions: async (_, { userId }) => {
+          const user = await User.findById(userId).populate("favorites");
+          return user.favorites;
+        },
     }, 
 
     Mutation: {
@@ -32,24 +36,24 @@ const resolvers = {
           return await User.findByIdAndDelete(id);
         },
     
-        login: async (_, { username, password }) => {
-          const user = await User.findOne({ username });
+        login: async (_, { email, password }) => {
+          const user = await User.findOne({ email });
           if (!user) {
             throw new Error("User not found");
           }
-    
+        
           const isPasswordValid = await bcrypt.compare(password, user.password);
           if (!isPasswordValid) {
             throw new Error("Incorrect password");
           }
-    
-          // You could also implement JWT authentication and return a token here.
-    
-          return user;
+        
+          
+          return { id: user.id, username: user.username, email: user.email };
         },
+        
     
         logout: async () => {
-          // If you implement JWT authentication, handle token revocation or expiration here.
+          
     
           return true;
         },

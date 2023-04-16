@@ -5,11 +5,10 @@ const connection = require('../config/connection');
 
 const seedDatabase = async () => {
     try {
-        // Delete existing data
         await User.deleteMany({});
         await Instruction.deleteMany({});
 
-        //Seed sample data
+       
         await User.create(userData);
         await Instruction.create(instructionData);
 

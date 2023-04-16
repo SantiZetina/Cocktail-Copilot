@@ -11,11 +11,11 @@ const AgeVerification = ({ onConfirm, onReject }) => {
   }
 
   return (
-    <div className="container d-flex align-items-center justify-content-center" style={{minHeight: '100vh'}}>
-        <div className="card" style={{minWidth: '20rem', backgroundColor: 'white'}}>
-            <div className="card-header">Age Verification</div>
-            <div className="card-body">
-                <p className="card-text">
+    <div className=" d-flex align-items-center justify-content-center" style={{minHeight: '100vh', backgroundColor: "rgba(0,0,0,0.5)"}}>
+        <div className="card shadow" style={{minWidth: '20rem', backgroundColor: 'lightgray'}}>
+            <div className="card-header text-center">Age Verification</div>
+            <div className="card-body text-center">
+                <p className="card-text text-dark ">
                     Are you 21 or older?
                 </p>
                 <button className="btn btn-primary mr-2" onClick={onConfirm}>Yes</button>
