@@ -22,9 +22,6 @@ async function startServer() {
     server.applyMiddleware({ app });
 }
 
-startServer();
-
-const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -35,6 +32,10 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Internal Server Error');
 });
+
+startServer();
+
+const PORT = process.env.PORT || 3000;
 
 
 app.use(express.static(path.join(__dirname, '../client/build')));
