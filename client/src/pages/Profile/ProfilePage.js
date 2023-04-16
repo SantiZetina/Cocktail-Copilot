@@ -24,7 +24,7 @@ const ProfilePage = ({ userId, onLogout }) => {
     <div className="profile-page">
       <div className="profile-header">
         <img className="profile-picture" src="profile_picture_placeholder.jpg" alt="Profile" />
-        <h2 className="profile-name">{user.username}</h2>
+        {user && <h2 className="profile-name">{user.username}</h2>}
       </div>
       <div className="profile-bio">
         <p>Your bio goes here.</p>
